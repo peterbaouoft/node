@@ -122,7 +122,7 @@ ETCD_VERSION?=v3.3.7
 # If building on amd64 omit the arch in the container name.  Fixme!
 ETCD_IMAGE?=quay.io/coreos/etcd:$(ETCD_VERSION)
 ifneq ($(BUILDARCH),amd64)
-        ETCD_IMAGE=$(ETCD_IMAGE)-$(ARCH)
+        ETCD_IMAGE:=$(ETCD_IMAGE)-$(ARCH)
 endif
 
 K8S_VERSION?=v1.14.1
